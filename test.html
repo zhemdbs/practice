@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rangebar</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="watch-configurator-page__bar">
+    <div class="watch-configurator-page__bar-inner">
+      <!-- /* [D] if the point is activated, apply the position value style width. */ -->
+      <span class="watch-configurator-page__bar-progress" style="width:0"></span>
+      <!-- /* [D] if active : add 'is-active' class && 'aria-selected' attr 'true' */ -->
+      <div class="watch-configurator-page__bar-point-wrap">
+        <a href="javascript:void(0);" role="button" class="watch-configurator-page__bar-point" aria-selected="false">
+          <span>£0</span>
+        </a>
+        <a href="javascript:void(0);" role="button" class="watch-configurator-page__bar-point" aria-selected="false">
+          <span>£200</span>
+        </a>
+        <a href="javascript:void(0);" role="button" class="watch-configurator-page__bar-point" aria-selected="false">
+          <span>£400</span>
+        </a>
+        <a href="javascript:void(0);" role="button" class="watch-configurator-page__bar-point" aria-selected="false">
+          <span>£800</span>
+        </a>
+        <a href="javascript:void(0);" role="button" class="watch-configurator-page__bar-point" aria-selected="false">
+          <span>£1,200</span>
+        </a>
+        <a href="javascript:void(0);" role="button" class="watch-configurator-page__bar-point" aria-selected="false">
+          <span>£1,600</span>
+        </a>
+      </div>
+      <a href="javascript:void(0)" role="slider" class="watch-configurator-page__bar-handler handler1"
+        aria-orientation="horizontal">
+        <!-- /* [D] active slide index number update */ -->
+        <span class="blind" aria-live="polite">Slide <span class="num"></span> is activated.</span>
+      </a>
+      <a href="javascript:void(0)" role="slider" class="watch-configurator-page__bar-handler handler2" aria-orientation="horizontal">
+        <!-- /* [D] active slide index number update */ -->
+        <span class="blind" aria-live="polite">Slide <span class="num"></span> is activated.</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

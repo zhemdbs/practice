@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create row and column</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./scss/style.css" />
+  <script src="./main.js"></script>
+  <!-- <script src="./main2.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <h3 style="text-align: center; padding-top: 50px">
+      Local Data
+      <small class="text-muted">with localStorage data view</small>
+    </h3>
+    <br />
+    <button type="button" class="add_view_btn">Create row and column</button>
+    <table id="data_table" class="table table-bordered table-striped table-dark table-hover text-center">
+      <caption>
+        List of localStorage
+      </caption>
+      <thead class="thead-light" id="data_category">
+        <tr>
+          <th class="category">Key</th>
+          <th class="category">Value</th>
+          <th class="category">Remove</th>
+        </tr>
+      </thead>
+      <tbody id="localdata_wrap"></tbody>
+    </table>
+  </div>
+</body>
+
+</html>

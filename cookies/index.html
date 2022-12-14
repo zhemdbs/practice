@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js cookie</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./scss/style.css" />
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h3 style="text-align: center; padding-top: 50px">
+      JS Cookie
+      <small class="text-muted">with faded secondary text</small>
+    </h3>
+    <br />
+    <table id="data_table" class="table table-bordered table-striped table-dark table-hover text-center">
+      <caption>
+        List of Articles
+      </caption>
+      <thead class="thead-light" id="data_category">
+        <tr>
+          <th class="category">Check list</th>
+          <th class="category">Click</th>
+        </tr>
+      </thead>
+      <tbody id="cookie_wrap">
+        <tr>
+          <td>
+            쿠키 확인하기
+          </td>
+          <td><button class="btnGetCookie">Get Cookie</button></td>
+        </tr>
+        <tr>
+          <td>쿠키 생성하기</td>
+          <td><button class="btnSetCookie">Set Cookie</button></td>
+        </tr>
+        <tr>
+          <td>쿠키 삭제하기</td>
+          <td><button class="btnDeleteCookie">Delete Cookie</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

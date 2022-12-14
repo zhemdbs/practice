@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js cookie2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./scss/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h3 style="text-align: center; padding-top: 50px">
+      JS Cookie
+      <small class="text-muted">with local data storage</small>
+    </h3>
+    <br />
+    <table id="data_table" class="table table-bordered table-striped table-dark table-hover text-center">
+      <caption>
+        List of Cookies
+      </caption>
+      <thead class="thead-light" id="data_category">
+        <tr>
+          <th class="category">Check list</th>
+          <th class="category">Click</th>
+        </tr>
+      </thead>
+      <tbody id="cookie_wrap">
+        <tr>
+          <td>
+            쿠키 확인하기
+          </td>
+          <td><button onclick="getCookie()">Get Cookie</button></td>
+        </tr>
+        <tr>
+          <form id="form">
+            <td class="align-middle">
+              <input type="text" name="cname" value="" id="cname" placeholder="cookie name" required>
+              <input type="text" name="cvalue" value="" id="cvalue" placeholder="cookie value">
+              <input type="text" name="cexpire" value="" id="cexpire" placeholder="cookie expire" required>
+            </td>
+            <td><button type="submit">Set Cookie</button></td>
+          </form>
+        </tr>
+        <tr>
+          <td>쿠키 삭제하기</td>
+          <td><button onclick="deleteCookie('aa')">Delete Cookie</button></td>
+        </tr>
+        <tr>
+          <td>쿠키 전체 삭제하기</td>
+          <td><button onclick="allDeleteCookie()">All delete Cookie</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>

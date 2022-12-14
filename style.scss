@@ -1,0 +1,141 @@
+.blind {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+
+.watch-configurator-page {
+  &__bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: inline-block;
+    // position: relative;
+    margin-top: 22px;
+    padding-right: 8px;
+    margin-right: -9px;
+
+    &.is-resize {
+      .watch-configurator-page {
+
+        &__bar-progress,
+        &__bar-handler {
+          transition: none;
+        }
+      }
+    }
+
+    &-progress {
+      position: absolute;
+      top: -0.5px;
+      left: 0;
+      height: 2px;
+      background: #000;
+      transition: 0.3s;
+    }
+
+    &-point {
+      display: inline-block;
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #757575;
+      transition: 0.1s;
+      text-decoration: none;
+      color: #000;
+
+      // span {
+      //   margin-top: 10px;
+      // }
+
+      &.is-active {
+        background: #000;
+      }
+
+      &-wrap {
+        display: flex;
+        width: 330px;
+        height: 1px;
+        background: #757575;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &-handler {
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      margin-left: -3px;
+      border-radius: 50%;
+      background: #2189FF;
+      transition: 0.3s; // progress와 속도 맞춰야 함.
+      cursor: pointer;
+
+      &.handler1 {
+        left: 0;
+      }
+      &.handler2 {
+        left: calc(40% - 7px);
+      }
+
+      .svg-box {
+        position: absolute;
+        top: -13px;
+        left: -13px;
+        width: 40px;
+        height: 40px;
+
+        svg {
+          max-width: 100%;
+          height: 100%;
+        }
+
+        .hover,
+        .pressed {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: scale(0);
+          transition: all 0.3s;
+        }
+
+        .hover {
+          z-index: 10;
+        }
+
+        .pressed {
+          z-index: 1;
+        }
+      }
+
+      &.is-hover {
+
+        .hover,
+        .pressed {
+          transform: scale(1);
+        }
+      }
+
+      &.is-pressed {
+        .hover {
+          z-index: 1;
+        }
+
+        .pressed {
+          z-index: 10;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

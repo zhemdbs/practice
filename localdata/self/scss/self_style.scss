@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+}
+h3 {
+  padding: 50px 0  80px;
+}
+.all_view_btn {
+  position: absolute;
+  top: 120px;
+  right: 10%;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightcoral;
+
+  &:hover {
+    box-shadow: 0 7px 30px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+
+table {
+  td {
+    vertical-align: middle !important;
+  }
+  button {
+    width: 150px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightblue;
+
+    &:hover {
+      background-color: teal;
+      color: #fff;
+    }
+  }
+}

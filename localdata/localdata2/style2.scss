@@ -1,0 +1,29 @@
+.all_view_btn {
+  position: absolute;
+  right: 10%;
+  padding: 10px 25px;
+  border: none;
+  background-color: lightskyblue;
+  color: #222;
+
+  &:hover {
+    background-color: lightcoral;
+    color: #fff;
+  }
+}
+table {
+  margin-top: 70px;
+  td {
+    vertical-align: middle !important;
+  }
+}
+.removeBtn {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightpink;
+  &:hover {
+    background-color: tomato;
+    color: #fff;
+  }
+}

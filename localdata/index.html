@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>local Data with localStorage</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3 style="text-align: center; padding-top: 50px">
+        Local Data
+        <small class="text-muted">with localStorage - setItem, getItem</small>
+      </h3>
+      <br />
+      <table
+        class="table table-bordered table-striped table-dark table-hover text-center"
+      >
+        <caption>
+          Method of localStorage
+        </caption>
+        <thead class="thead-light">
+          <tr>
+            <th>Local Storage Method</th>
+            <th>Input</th>
+            <th>Button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle">
+              브라우저 로컬 데이터에 저장하기
+            </td>
+            <td style="vertical-align: middle"><input type="text" /></td>
+            <td><button class="btnSetLocalData">Set Data</button></td>
+          </tr>
+          <tr>
+            <td class="align-middle">브라우저 로컬 데이터에 가져오기</td>
+            <td class="align-middle">위에 표시☝</td>
+            <td><button class="btnGetLocalData">Get Data</button></td>
+          </tr>
+          <tr>
+            <td class="align-middle">브라우저 로컬 데이터에 삭제하기</td>
+            <td class="align-middle">❌</td>
+            <td><button class="btnRemove">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

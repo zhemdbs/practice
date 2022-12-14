@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>self_localdata</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./scss/self_style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>
+      Local Data
+      <small class="text-muted">self - localData</small>
+    </h3>
+    <br />
+    <button type="button" class="all_view_btn">
+      localStorage Data All View
+    </button>
+    <table class="table table-bordered table-striped table-dark table-hover text-center">
+      <caption>
+        practice localStorage
+      </caption>
+      <thead class="thead-light">
+        <tr>
+          <th>Local Storage Method</th>
+          <th>key Input</th>
+          <th>value Input</th>
+          <th>Button</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            로컬데이터에 저장
+          </td>
+          <td><input class="input_key" type="text" /></td>
+          <td><input class="input_value" type="text" /></td>
+          <td><button class="btnSetLocalData">Set Data</button></td>
+        </tr>
+        <tr>
+          <td>로컬데이터에서 랜덤으로 가져오기</td>
+          <td>key 표시👆</td>
+          <td>value 표시👆</td>
+          <td><button class="btnGetLocalData">Random Data</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-bordered table-striped table-dark table-hover text-center">
+      <thead class="thead-light">
+        <tr>
+          <th>key</th>
+          <th>value</th>
+          <th>Button</th>
+        </tr>
+      </thead>
+      <tbody class="localdata_wrap"></tbody>
+    </table>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./self_main.js"></script>
+</body>
+</html>
