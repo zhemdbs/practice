@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.customize_area {
+  margin: 40px 0;
+}
+
+.option_box {
+  display: inline-block;
+}
+.option_box label {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.img_area {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: brown;
+}
