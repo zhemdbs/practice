@@ -25,6 +25,23 @@ label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: brown;
+  /* background-color: brown; */
   transition: all .5s;
+}
+
+:root {
+  /*최상위 가상선택자*/
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+}
+
+img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.emphasis{
+  color: var(--base);
 }

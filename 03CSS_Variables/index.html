@@ -8,22 +8,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p class="title">Update CSS Variables With <span>JS</span></p>
+  <p class="title">Update CSS Variables With <span class="emphasis">JS</span></p>
   <div class="customize_area">
     <label for="spacing">Spacing</label>
-    <input type="range" id="spacing" value="5">
+    <input type="range" id="spacing" name="spacing" value="5" data-sizing="px">
     
     <label for="blur">Blur</label>
-    <input type="range" id="blur" value="5">
+    <input type="range" id="blur" value="5" name="blur" data-sizing="px">
     
     <label for="base_color">Base Color</label>
-    <input type="color" id="base_color">
+    <input type="color" name="base" id="base_color">
   </div>
-  <div class="img_area">
-    <img src="./images.jpg" alt="image">
-  </div>
+  <img class="img_area" src="./images.jpg" alt="image">
   <script src="https://code.jquery.com/jquery-3.6.2.min.js"
     integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
+  <script src="improvement.js"></script>
 </body>
 </html>
