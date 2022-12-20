@@ -1,5 +1,5 @@
 const titleEmphasis = document.querySelector('.title > span')
-const inputs = document.querySelectorAll('.option_box input');
+
 const spacing = document.querySelector('#spacing');
 const blur = document.querySelector('#blur');
 const baseColor = document.querySelector('#base_color');
