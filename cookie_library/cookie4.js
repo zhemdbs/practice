@@ -34,7 +34,7 @@ console.log($.removeCookie("aaa")); //false
 $.removeCookie("userid");
 console.log($.cookie());
 
-//[7] 쿠키 생성시 domain, path지정과 함께 생성되었다면 삭제시에도 똑같이 필요
+//[7] 쿠키 생성시 domain, 'path지정'과 함께 생성되었다면 삭제시에도 똑같이 필요
 $.cookie("cat", "rarara", { expire: 7, path: "/" });
 console.log($.cookie());
 $.removeCookie("cat", { path: "/" });
