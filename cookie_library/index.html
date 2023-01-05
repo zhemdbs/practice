@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery-cookie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h3 style="text-align: center; padding-top: 50px">
+        JS Cookie
+        <small class="text-muted">with jQuery Cookie Library</small>
+      </h3>
+      <br />
+      <table id="data_table" class="table table-bordered table-striped table-dark table-hover text-center">
+        <caption>
+          List of Cookies
+        </caption>
+        <thead class="thead-light" id="data_category">
+          <tr>
+            <th class="category">Check list</th>
+            <th class="category">Click</th>
+          </tr>
+        </thead>
+        <tbody id="cookie_wrap">
+          <tr>
+            <td>쿠키 확인하기</td>
+            <td><button onclick="getCookie()">Get Cookie</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="./cookie4.js"></script>
+  </body>
+</html>

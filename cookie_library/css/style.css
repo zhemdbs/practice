@@ -1,0 +1,16 @@
+table td {
+  vertical-align: middle !important;
+}
+
+table button {
+  width: 150px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+table button :hover {
+  background-color: teal;
+  color: #fff;
+}
