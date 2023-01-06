@@ -29,14 +29,21 @@
         </thead>
         <tbody id="cookie_wrap">
           <tr>
-            <td>쿠키 확인하기</td>
-            <td><button onclick="getCookie()">Get Cookie</button></td>
+            <form id="form">
+              <td>
+                <input type="text" name="cname" value="" id="cname" placeholder="cookie name" required />
+              </td>
+              <td><button type="submit">Delete Cookie</button></td>
+            </form>
+          </tr>
+          <tr>
+            <td>쿠키 전체 삭제하기</td>
+            <td><button onclick="allDeleteCookie()">All delete Cookie</button></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="./cookie4.js"></script>
+    <script src="http://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="js/cookie5.js"></script>
   </body>
 </html>
