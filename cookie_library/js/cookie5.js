@@ -56,11 +56,13 @@ console.log(Cookies.get());
 console.log(Object.keys(Cookies.get()));
 const allKeys = Object.keys(Cookies.get());
 
-allKeys.forEach((cName) => {
-  // 할일 처리
-  let neededOption = {
-    //path부분
-    // const allPath =
-  };
-  Cookies.remove(cName, neededOption);
-});
+function allDeleteCookie() {
+  allKeys.forEach((cName) => {
+    // 할일 처리
+    let neededOption = {
+      //path부분
+      // const allPath =
+    };
+    Cookies.remove(cName, neededOption);
+  });
+}
