@@ -72,11 +72,11 @@ console.log(document.cookie); //catid=catman; userid=superman; username=batman; 
 
 //쿠키 읽기
 const userGetCookie = (cname) => {
-  let name = cname + '=';
-  console.log(name);
+  // let name = cname + '=';
+  let name = cname;
 
   // let allCookie = document.cookie.split('; '); //';'한 칸 띄어쓰기 주의!
-  let allCookie = decodeURIComponent(document.cookie).split('; '); //위와 결과는 동일
+  let allCookie = decodeURIComponent(document.cookie).split(';'); //위와 결과는 동일
   console.log(allCookie);
 
   //encodeURIComponent는 자바스크립트에서 string을 UTF-8로 인코딩해주는 함수
@@ -85,10 +85,22 @@ const userGetCookie = (cname) => {
 
   let value = [];
   for (let i = 0; i < allCookie.length; i++) {
-    console.log(allCookie[i].trim().indexOf(name)); //위에 한칸 띄어쓰기가 안됬을 경우 trim을 이용해 다시 없앰
+    // console.log(allCookie[i].trim()); //위에 한칸 띄어쓰기가 안됬을 경우 trim을 이용해 다시 없앰
+    console.log(allCookie[i].trim().indexOf(name));
+
     //indexOf메서드의 리턴값 -> 배열일 경우 -> 검색된 항목의 index값
     //문자열일 경우 -> 검색된 문자열의 첫 글자의 index값
     //검색 결과 가 없을 경우 -> -1리턴
+    //결론적으로 name에 '='가 붙은것을 찾기때문에 'antman='은 없어서 -1로 리턴된다
+    //위에서 '='을 지운다면, 6으로 리턴될것이다
+
+    //if조건문 -> ['catid=catman', ' userid=superman', ' username=batman', ' cname=antman']
+    if (allCookie[i].trim().indexOf(name) == 0) {
+      value = allCookie[i].trim().split('=');
+
+      console.log('value', value[1]); //superman
+    }
   }
+  return value.length > 0 ? value[1] : 'nothing';
 };
 console.log('userGetCookie 함수로 리턴된 값 = ' + userGetCookie('userid'));
