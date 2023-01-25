@@ -15,6 +15,7 @@ const oneGetCookie = (cname) => {
 console.log(oneGetCookie('userid'));
 
 //[10]forEach 메서드를 이용해 userGetCookie2함수 만들기
+console.clear();
 console.log(document.cookie); //catid=catman; userid=superman; username=batman; cname=antman
 
 const userGetCookie2 = (cname) => {
@@ -24,7 +25,15 @@ const userGetCookie2 = (cname) => {
   //2. 반복처리 - forEach()
   document.cookie.split('; ').forEach((el) => {
     //할일처리
+    // el=el.trim();
     console.log(el);
+
+    let [k,v] = el.split('=');  //공백처리
+
+    cookie[k.trim()] = v;
+    console.log(cookie);
   });
+  return cookie[cname];
 };
+
 console.log('userGetCookie 함수로 리턴된 값 = ' + userGetCookie2('userid'));
