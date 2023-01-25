@@ -35,5 +35,43 @@ const userGetCookie2 = (cname) => {
   });
   return cookie[cname];
 };
-
 console.log('userGetCookie 함수로 리턴된 값 = ' + userGetCookie2('userid'));
+
+//[11]ES6버전으로 userGetCookie3함수 만들기
+console.clear();
+console.log(document.cookie); //catid=catman; userid=superman; username=batman; cname=antman
+
+const userGetCookie3 = (cname) => {
+  //1.cname 수정
+  cname = cname + "="; // userid=
+
+  //2.문자열(쿠키명) 찾기
+  const str = document.cookie;
+  const isCookieIdx = str.indexOf(cname);
+
+  console.log(isCookieIdx); //userid 검색 시 반환하는 값은? -> 14 반환 / 없으면 -1 반환
+
+  //3.쿠키 가져와서 분리 -> 처리
+  let result = 'no result';
+  if(isCookieIdx >= 0) {
+    //할일 처리
+    result = document.cookie.split('; ').find(item => item.startsWith(cname)).split('=')[1];
+  }
+  return result;
+}
+console.log('userGetCookie 함수로 리턴된 값 = ' + userGetCookie3('userid'));
+
+
+function showValue(cname) {
+  const rst = document.getElementById('value');
+  rst.textContetn = userGetCookie3(cname);
+}
+function clearValue(){
+  const rst = document.getElementById('value');
+  rst.textContent = '' ;
+}
+
+//JS. value vs textContent 차이점
+//input과 같은 form요소에는 -> .value메서드 사용
+//div, span등의 요소에는 -> .textContent메서드 사용
+
