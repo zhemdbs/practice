@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pop-window-today</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h3 style="text-align: center; padding-top: 50px">
+        Popup window
+        <small class="text-muted">with js-cookie library</small>
+      </h3>
+      <br />
+      <table id="data_table" class="table table-bordered table-striped table-dark table-hover text-center">
+        <caption>
+          List of Cookies
+        </caption>
+        <thead class="thead-light" id="data_category">
+          <tr>
+            <th class="category">Check list</th>
+            <th class="category">Click</th>
+          </tr>
+        </thead>
+        <tbody id="cookie_wrap">
+          <tr>
+            <form id="form">
+              <td>
+                <input type="text" name="cname" value="" id="cname" placeholder="cookie name" required />
+              </td>
+              <td><button type="submit">Delete Cookie</button></td>
+            </form>
+          </tr>
+          <tr>
+            <td>쿠키 전체 삭제하기</td>
+            <td><button onclick="allDeleteCookie()">All delete Cookie</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pop_up">
+      <div class="dimmed"></div>
+      <div class="notice">
+        <p class="title">notice</p>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nulla impedit ipsam minima sapiente? Dolorem, officia rerum numquam vel iure perferendis repudiandae maxime distinctio
+          doloremque omnis voluptates. At, excepturi voluptate. Fugiat dignissimos, modi animi cupiditate odit, dolor harum soluta iste quia eum quos hic repudiandae magni excepturi ut cum tempore
+          labore quis! Amet maiores, laboriosam saepe nihil libero distinctio voluptas!
+        </p>
+        <a href="#" class="btn_close"><span class="blind">Close</span></a>
+        <a href="#" class="btn_close_today">오늘 하루 창 닫기</a>
+      </div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="js/popup.js"></script>
+  </body>
+</html>
