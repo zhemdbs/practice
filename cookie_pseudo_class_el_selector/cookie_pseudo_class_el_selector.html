@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo Class vs Element</title>
+  <style>
+    /*
+      1. 가상 클래스, 가상 요소, 가상 선택자(Pseudo-class, Pseudo-element, Pseudo-selector)
+
+      이것들을 사용하면 HTML 문서내에 쓸데없는 태그 작성이나 수정 없이
+      CSS작업단에서 디자인적인 요소를 추가 또는 꾸밀 수 있어서 매우 많이 사용하는 CSS기법 중 하나.
+
+      즉, HTML 문서에는 존재하지 않지만 필요에 의해 임의로 가상의 선택자를 지정하여 꾸미는 것.
+
+
+      2. 쓸데없는 태그를 사용하지 않는다는 것은 뭐가 좋은가?
+      
+      - 전체적인 문서의 가독성을 좋게 만듬
+      - 가급적 HTML문서에 쓸데없는 태그나 디자인적 꾸밈 없다면 화면 리더기 등이 읽어 나갈때 이러한 부분을 스캐닝 하지 않으므로 좋음
+
+      3. 사용방법
+
+      : 또는 :: (호환성을 위해 모두 사용이 가능)
+
+      4. 가상클래스
+
+      실제 클래스를 만들어 사용하는 것이 아닌 선택자 뒤에 가상 클래스를 붙여 CSS디자인을 꾸밈
+      
+      선택자:가상클래스 {property:value;}
+      예시)
+      :link {...} / :hover {...} / :active {...} / :visited {...} / :focus {...} / :nth-child(n) / :first-child / :last-child / :checked 등등
+
+      5. 가상요소
+
+      가상 클래스는 실제로 문서(HTML)에 작성되어 있는 요소에 클래스 추가 없이 CSS 디자인을 꾸밈
+      클래스가 없음에도 마치 클래스를 만들어 지정해 놓은 것처럼 선택자로 선택하고 꾸밈
+      반면, 가상요소는 실제 문서(HTML)에 없는 요소를 아예 있는 것처럼 만들어서 사용하게끔 함
+      어떠한 요소(Element)도 없는데 마치 있는 것처럼 가상으로 지정해서 CSS를 수정
+
+      - 가상 클래스와 구분을 위해 :: 2개 사용
+      선택자::가상요소 {property: value;}
+      예시)
+      ::before {content:"";} / ::after {content:"";} / ::marker {...} / ::selection {...} / ::first-line {...} / ::first-letter {...} 등등
+
+      6. ::before, ::after
+      
+      - 특정 요소의 앞이나 뒤에 텍스트, 이미지, 박스 등의 내용을 만들어 넣을 수 있음
+      - content 지정을 꼭 해줘야지만 되며 하지 않으면 동작되지 않음
+      - :,:: 둘 다 가능하며 호환성을 위해 구버전도 지원하고 있음
+    */
+  </style>
+</head>
+<body>
+
+</body>
+</html>
