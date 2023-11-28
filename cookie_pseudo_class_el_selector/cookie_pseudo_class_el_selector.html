@@ -53,7 +53,7 @@
 </head>
 <body>
   <!-- 예제1 -->
-  <style>
+  <!-- <style>
     a:link {
       color: tomato;
       text-decoration: none;
@@ -84,7 +84,56 @@
   <a href="#">가상클래스</a>
   <input type="text" class="inp">
   <input type="text" class="inp">
-  <input type="text" class="inp">
+  <input type="text" class="inp"> -->
   <!-- // 예제1 -->
+
+  <!-- 예제2 : 가상요소 -->
+  <style>
+    .test {
+      border: 1px solid;
+    }
+    .test ul li:first-child {
+      font-weight: bold;
+      color: slateblue;
+    }
+    .test ul li::first-letter {
+      font-weight: bold;
+      color: red;
+      font-size: 200%;
+    }
+    .test2::first-line {
+      background-color: green;
+      font-weight: bold;
+      color: white;
+    }
+    .test2::first-letter {
+      color: red;
+      font-size: 200%;
+    }
+    .test2::before {
+      content: 'AAAA';
+    }
+    .test2::after {
+      content: 'BBBB';
+    }
+    /*
+      before, after은 content에서는 이미지 사이즈 조절이 불가능하다
+      만약, 이미지 사이즈 조절을 해주고자 한다면 background-image를 사용하여 조절
+    */
+
+    .btn::before {
+      content: '❌';
+    }
+  </style>
+  <p class="btn">창 닫기</p>
+  <div class="test">
+    <ul>
+      <li>영화 보니깐 기분 좋다</li>
+      <li>보는 내내 몰입감과 긴장감이 잇어서 좋다</li>
+      <li>한국 영화가 요즘 흥행하고 있다</li>
+    </ul>
+  </div>
+  <p class="test2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore eum amet facilis minus nostrum? Repudiandae modi eius, qui nobis nulla sit voluptatem, quidem, atque aspernatur numquam itaque nostrum et! Dicta.</p>
+  <!-- // 예제2 : 가상요소 -->
 </body>
 </html>
