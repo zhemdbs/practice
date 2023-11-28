@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo Element</title>
+  <style>
+    * {
+      margin:0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    #footer {
+      background-color: #ddd;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    footer {
+      border: 5px solid;
+      width: 1170px;
+      margin: 0 auto;
+      margin-top: 450px;
+    }
+    ul {
+      display: flex;
+    }
+    /* ul::after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+    li {
+      padding: 10px;
+      list-style: none;
+      float: left;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    li:not(:first-child)::before {
+      position: absolute;
+      left: 0;
+      width: 2px;
+      height: 50%;
+      background: steelblue;
+      content: '';
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    inline vs block vs inline-block
+    - inline
+      대표 태그 : span
+      width, height :  적용 불가
+      margin, padding : 일부 불가
+      line-height : 제대로 사용x
+
+    - block
+      대표 태그 : div
+      inline과 반대 특징
+      기본적으로 100% 너비를 차지(한줄). 다음 태그는 줄 바꿈이 적용
+
+    - inline-block
+      inline속성이면서 block속성의 특징을 가짐
+      width, height, margin, padding 적용이 가능
+      줄 바꿈을 하지 않음
+  -->
+  <!-- 예제3 -->
+  <div id="footer">
+    <footer>
+      <ul>
+        <li>회사소개</li>
+        <li>이용약관</li>
+        <li>자주 묻는 질문</li>
+        <li>제휴문의</li>
+        <li>사이트맵</li>
+      </ul>
+    </footer>
+  </div>
+  <!-- //예제3 -->
+</body>
+</html>
