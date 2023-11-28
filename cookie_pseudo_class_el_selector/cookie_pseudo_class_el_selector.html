@@ -52,6 +52,39 @@
   </style>
 </head>
 <body>
-
+  <!-- 예제1 -->
+  <style>
+    a:link {
+      color: tomato;
+      text-decoration: none;
+    }
+    a:hover {
+      color: seagreen;
+      text-decoration: underline;
+    }
+    a:active {
+      color: steelblue;
+    }
+    a:visited {
+      color: turquoise  ;
+    }
+    a:focus {
+      color: yellowgreen;
+      background-color: black;
+    }
+    input:focus {
+      background-color: red;
+      color: white;
+    }
+    input:last-child:focus { /*live-server에선 먹히지 않음*/
+      background-color: aqua;
+    }
+  </style>
+  
+  <a href="#">가상클래스</a>
+  <input type="text" class="inp">
+  <input type="text" class="inp">
+  <input type="text" class="inp">
+  <!-- // 예제1 -->
 </body>
 </html>
