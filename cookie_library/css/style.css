@@ -1,0 +1,17 @@
+table td {
+  vertical-align: middle !important;
+}
+
+button {
+  width: 150px;
+  padding: 10px 15px;
+  margin: 3px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+button :hover {
+  background-color: teal;
+  color: #fff;
+}
