@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css variables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p class="title">Update CSS Variables With <span class="emphasis">JS</span></p>
+  <div class="customize_area">
+    <label for="spacing">Spacing</label>
+    <input type="range" id="spacing" name="spacing" value="5" data-sizing="px">
+    
+    <label for="blur">Blur</label>
+    <input type="range" id="blur" value="5" name="blur" data-sizing="px">
+    
+    <label for="base_color">Base Color</label>
+    <input type="color" name="base" id="base_color">
+  </div>
+  <img class="img_area" src="./images.jpg" alt="image">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  <!-- <script src="main.js"></script> -->
+  <script src="improvement.js"></script>
+</body>
+</html>
