@@ -1,0 +1,94 @@
+/* footer styles */
+footer {
+  text-align: center;
+  padding: 2em 0;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 0.8em;
+  font-size: 100%;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 10rem !important;
+  height: 3.5rem;
+  max-width: 150px;
+  margin: 0 0.5rem;
+  z-index: 1;
+}
+
+#shareButton {
+  background-color: #fff;
+  color: #e8344e;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#studyButton {
+  background-color: #E8334E;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#studyButton a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* 화면 크기가 작을 때의 스타일 */
+@media (max-width: 768px) {
+
+  #shareButton,
+  #studyButton {
+    width: 90%;
+    /* 더 작은 화면에서 버튼 너비를 늘림 */
+    padding: 10px;
+    font-size: 90%;
+    /* 작은 화면에서 폰트 크기 줄임 */
+  }
+}
+
+/* 호버 효과는 모든 화면 크기에 적용 */
+#shareButton:hover {
+  background-color: #fae1e1;
+}
+
+/* 호버 효과는 모든 화면 크기에 적용 */
+#studyButton:hover {
+  background-color: #bc2a40;
+}
+
+/* 음악 재생 버튼 */
+.sound {
+  position: relative;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  text-align: center;
+  margin: 1.5rem 1rem 0;
+  background-image: url("image/sound_on.png");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+/* 음악 중단 버튼 */
+.stop {
+  background-image: url("image/sound_off.png");
+}
+
+/* 하단부 안내 */
+.copyright {
+  width: 400px;
+  font-size: 10px;
+}
