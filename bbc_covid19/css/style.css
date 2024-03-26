@@ -1,0 +1,119 @@
+.news__inner {
+  max-width: 620px;
+  margin: 0 auto;
+}
+.news .header {
+  margin-bottom: 24px;
+}
+.news .header__title {
+  font-size: 43px;
+  font-weight: 600;
+  word-break: keep-all;
+}
+.news .header__product {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+}
+.news .header__product .product__byline {
+  font-size: 15px;
+  line-height: 18px;
+}
+.news .header__product .product__date {
+  font-size: 15px;
+  line-height: 18px;
+}
+.news .header__product .product__date::before {
+  display: inline-block;
+  content: "";
+  background: url("../images/timestamp.svg") no-repeat center;
+  background-size: 35px auto;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.news .header__product .product__more::before {
+  display: inline-block;
+  content: "";
+  height: 18px;
+  width: 1px;
+  background: #979797;
+}
+.news .header__product .product__more a {
+  font-size: 15px;
+  line-height: 18px;
+  vertical-align: top;
+  margin-left: 8px;
+  color: #bb1919;
+}
+.news .header__text {
+  font-size: 17px;
+  line-height: 21px;
+}
+.news .header__text + .header__text {
+  margin-top: 19px;
+}
+.news .container .scroll__content {
+  position: relative;
+}
+.news .container .scroll__graphic {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.news .container .scroll__graphic .graphic__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.news .container .scroll__graphic .graphic__item.visible {
+  opacity: 1;
+}
+.news .container .scroll__graphic .graphic__item .scene__img {
+  max-height: 100vh;
+}
+.news .container .scroll__bubble {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.news .container .scroll__bubble .bubble__stap {
+  margin-bottom: 60vh;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  border: 1px solid #979797;
+  padding: 20px;
+  max-width: 416px;
+}
+.news .container .scroll__bubble .bubble__stap .text {
+  font-size: 17px;
+  line-height: 20px;
+}
+.news .container .scroll__bubble .bubble__stap .text + .text {
+  margin-top: 10px;
+}
+.news .container .normal__article {
+  margin-top: 25px;
+}
+.news .container .normal__article .article__img {
+  margin-bottom: 20px;
+}
+.news .container .normal__article .article__title {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+.news .container .normal__article .text {
+  font-size: 16px;
+  line-height: 22px;
+}
+.news .container .normal__article .text + .text {
+  margin-top: 15px;
+}/*# sourceMappingURL=style.css.map */

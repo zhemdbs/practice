@@ -1,0 +1,146 @@
+.news {
+  &__inner {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .header {
+    margin-bottom: 24px;
+
+    &__title {
+      font-size: 43px;
+      font-weight: 600;
+      word-break: keep-all;
+    }
+
+    &__product {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+
+      .product {
+        &__byline {
+          font-size: 15px;
+          line-height: 18px;
+        }
+        &__date {
+          font-size: 15px;
+          line-height: 18px;
+          &::before {
+            display: inline-block;
+            content: '';
+            background: url('../images/timestamp.svg') no-repeat center;
+            background-size: 35px auto;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+          }
+        }
+        &__more {
+          &::before {
+            display: inline-block;
+            content: '';
+            height: 18px;
+            width: 1px;
+            background: #979797;
+          }
+          a {
+            font-size: 15px;
+            line-height: 18px;
+            vertical-align: top;
+            margin-left: 8px;
+            color: #bb1919;
+          }
+        }
+      }
+    }
+
+    &__text {
+      font-size: 17px;
+      line-height: 21px;
+      + .header__text {
+        margin-top: 19px;
+      }
+    }
+  }
+
+  .container {
+    .scroll {
+      &__content {
+        position: relative;
+      }
+      &__graphic {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        
+        .graphic__item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity .5s;
+
+          &.visible {
+            opacity: 1;
+          }
+
+          .scene__img {
+            max-height: 100vh;
+          }
+        }
+      }
+
+      &__bubble {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .bubble__stap {
+          margin-bottom: 60vh;
+          background: rgba(#fff, .8);
+          border-radius: 5px;
+          border: 1px solid #979797;
+          padding: 20px;
+          max-width: 416px;
+          .text {
+            font-size: 17px;
+            line-height: 20px;
+            
+            & + .text {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+    .normal {
+      &__article {
+        margin-top: 25px;
+
+        .article__img {
+          margin-bottom: 20px;
+        }
+
+        .article__title {
+          font-size: 27px;
+          font-weight: 600;
+          margin-bottom: 26px;
+        }
+
+        .text {
+          font-size: 16px;
+          line-height: 22px;
+          & + .text {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
