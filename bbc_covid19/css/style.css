@@ -60,10 +60,10 @@
   position: sticky;
   top: 0;
   height: 100vh;
+  background-color: #F9F9F9;
 }
 .news .container .scroll__graphic .graphic__item {
   display: flex;
-  flex-direction: column;
   align-items: center;
   position: absolute;
   left: 0;
@@ -78,25 +78,26 @@
 }
 .news .container .scroll__graphic .graphic__item .scene__img {
   max-height: 100vh;
+  position: absolute;
 }
 .news .container .scroll__bubble {
   position: relative;
   display: flex;
   justify-content: center;
 }
-.news .container .scroll__bubble .bubble__stap {
+.news .container .scroll__bubble .bubble__step {
   margin-bottom: 60vh;
+}
+.news .container .scroll__bubble .bubble__step .text {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   border: 1px solid #979797;
   padding: 20px;
   max-width: 416px;
-}
-.news .container .scroll__bubble .bubble__stap .text {
   font-size: 17px;
   line-height: 20px;
 }
-.news .container .scroll__bubble .bubble__stap .text + .text {
+.news .container .scroll__bubble .bubble__step .text + .text {
   margin-top: 10px;
 }
 .news .container .normal__article {

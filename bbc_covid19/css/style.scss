@@ -73,10 +73,11 @@
         position: sticky;
         top: 0;
         height: 100vh;
+        background-color: #F9F9F9;
         
         .graphic__item {
           display: flex;
-          flex-direction: column;
+          // flex-direction: column;
           align-items: center;
           position: absolute;
           left: 0;
@@ -92,6 +93,7 @@
 
           .scene__img {
             max-height: 100vh;
+            position: absolute; //제거?
           }
         }
       }
@@ -101,14 +103,14 @@
         display: flex;
         justify-content: center;
 
-        .bubble__stap {
+        .bubble__step {
           margin-bottom: 60vh;
-          background: rgba(#fff, .8);
-          border-radius: 5px;
-          border: 1px solid #979797;
-          padding: 20px;
-          max-width: 416px;
           .text {
+            background: rgba(#fff, .8);
+            border-radius: 5px;
+            border: 1px solid #979797;
+            padding: 20px;
+            max-width: 416px;
             font-size: 17px;
             line-height: 20px;
             
