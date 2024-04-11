@@ -65,6 +65,7 @@
 .news .container .scroll__graphic .graphic__item {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: absolute;
   left: 0;
   top: 0;
@@ -128,6 +129,13 @@
 }
 .news .container .scroll__graphic .graphic__item.visible {
   opacity: 1;
+}
+.news .container .scroll__graphic .isometric-ground-floor-highlights {
+  position: absolute;
+  top: 0;
+  left: 48px;
+  z-index: 5;
+  width: 490px;
 }
 .news .container .scroll__bubble {
   position: relative;
