@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>API연습 - 검색</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>책이름을 검색하세요</h1>
+    <div class="button">
+      <input type="text" id="bookName" value="">
+      <button id="search_btn">search</button>
+    </div>
+    <div class="thumbnail"></div>
+    <p></p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="../api.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#search_btn').click(function() {
+        $.ajax({
+          method: "GET",
+          url: "https://dapi.kakao.com/v3/search/book",
+          data: { query: $('#bookName').val() },
+          headers: { Authorization: `KakaoAK ${REST_API_KEY}` }
+        })
+          .done(function (msg) {
+            // alert("Data Saved: " + msg);
+            console.log(msg)
+            $("p").append(msg.documents[1].title);
+            $(".thumbnail").append('<img src="' + msg.documents[1].thumbnail + '"/>');
+          });
+      })
+    })
+  </script>
+</body>
+
+</html>
