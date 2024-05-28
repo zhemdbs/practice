@@ -1,0 +1,21 @@
+# REST API - REST Client 사용 (API사용실습)
+# REST Client는 외부 API 테스팅 프로그램을 사용하지 않고도 간단한 파일을 작성하여 내부에서 API테스트를 할 수 있는 기능 제공
+
+
+# Google Books APIs
+get https://www.googleapis.com/books/v1/volumes?q=intitle=미움받을용기
+
+###
+get https://www.googleapis.com/books/v1/volumes?q=inauthor=기시미이치로
+
+
+###
+# YTS Movies APIs
+get https://yts.mx/api/v2/list_movies.json
+
+###
+get https://yts.mx/api/v2/list_movies.json
+  ?minimum_rating=8.5
+  &sort_by=year
+  &limit=2
+  &genre=Sci-Fi

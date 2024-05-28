@@ -21,7 +21,7 @@
       method: "GET",
       url: "https://dapi.kakao.com/v3/search/book",
       data: { query: "미움받을 용기" },
-      headers: { Authorization: `KakaoAK ${REST_API_KEY}` }
+      headers: { Authorization: `KakaoAK ${KAKAO_REST_API_KEY}` }
     })
       .done(function (msg) {
         // alert("Data Saved: " + msg);

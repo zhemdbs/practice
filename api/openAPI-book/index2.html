@@ -28,7 +28,7 @@
           method: "GET",
           url: "https://dapi.kakao.com/v3/search/book",
           data: { query: $('#bookName').val() },
-          headers: { Authorization: `KakaoAK ${REST_API_KEY}` }
+          headers: { Authorization: `KakaoAK ${KAKAO_REST_API_KEY}` }
         })
           .done(function (msg) {
             // alert("Data Saved: " + msg);
