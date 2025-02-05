@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>firWorks</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireworksCanvas"></canvas>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('fireworksCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let fireworks = []; // 폭죽을 저장할 배열
+
+      // 폭죽 이모지
+      const emojis = ['🎉', '✨'];
+
+      // 폭죽을 만드는 함수
+      function createFirework(x, y) {
+        const firework = {
+          x, y,
+          particles: [],
+          explosionSize: Math.random() * 20 + 10, // 폭죽 크기 랜덤
+          explosionSpeed: Math.random() * 3 + 2 // 폭죽 속도 랜덤
+        };
+        
+        // 폭죽에 있는 입자들 생성
+        for (let i = 0; i < firework.explosionSize; i++) {
+          firework.particles.push({
+            x: x,
+            y: y,
+            speedX: (Math.random() - 0.5) * 10, // 랜덤한 X 속도
+            speedY: (Math.random() - 0.5) * 10, // 랜덤한 Y 속도
+            size: Math.random() * 5 + 5, // 입자 크기
+            opacity: 1,
+            emoji: emojis[Math.floor(Math.random() * emojis.length)] // 랜덤 이모지
+          });
+        }
+
+        fireworks.push(firework);
+      }
+
+      // 폭죽 애니메이션
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // 화면 지우기
+
+        fireworks.forEach(firework => {
+          firework.particles.forEach((particle, index) => {
+            particle.x += particle.speedX; // X축 이동
+            particle.y += particle.speedY; // Y축 이동
+            particle.opacity -= 0.02; // 점점 투명해짐
+
+            // 입자들이 화면에서 사라지지 않게
+            if (particle.opacity <= 0) {
+              firework.particles.splice(index, 1);
+            }
+
+            // 이모지 그리기
+            ctx.font = `${particle.size}px sans-serif`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
+            ctx.fillText(particle.emoji, particle.x, particle.y); // 이모지 그리기
+          });
+        });
+
+        requestAnimationFrame(animate); // 계속해서 애니메이션 반복
+      }
+
+      // 화면에 폭죽 효과를 트리거하는 함수
+      function triggerFireworks() {
+        // 랜덤한 위치에서 폭죽 시작
+        createFirework(Math.random() * canvas.width, Math.random() * canvas.height);
+      }
+
+      // 게임 종료 시 폭죽 효과 발생
+      function gameOver() {
+        for (let i = 0; i < 30; i++) { // 폭죽의 수
+          triggerFireworks();
+        }
+      }
+
+      // 게임이 끝나면 폭죽 효과를 시작
+      setTimeout(gameOver, 1000); // 1초 후 폭죽 효과 시작
+
+      animate(); // 애니메이션 시작
+    });
+  </script>
+</body>
+</html>
