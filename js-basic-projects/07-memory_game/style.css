@@ -12,6 +12,7 @@ body {
   width: 100%;
   height: 100%;
   color: white;
+  text-align: center;
 }
 .popup .dimmed {
   position: absolute;
@@ -179,3 +180,11 @@ canvas {
     opacity: 0;
   }
 } */
+
+@media (max-width: 360px) {
+  .grid {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+}
