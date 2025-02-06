@@ -4,14 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memory Game</title>
+  <link rel="stylesheet" href="/js-basic-projects/reset.css"></link>
   <link rel="stylesheet" href="style.css"></link>
   <script src="game.js" charset="utf-8"></script>
 </head>
 <body>
-  <h3>Score:<span class="result">0</span></h3>
+  <div class="point-box">
+    <div class="timer"><div class="bar"></div><span class="timer-text">10</span></div>
+    <p class="point-text">Score:<span class="result">0</span></p>
+  </div>
 
   <div class="game-box">
     <div class="grid">
+    </div>
+  </div>
+
+  <div class="popup">
+    <div class="dimmed"></div>
+    <div class="gamestart">
+      <p class="title">Memory Game</p>
+      <p>Click two cards to find matching pairs.</p>
+      <button class="start">Start</button>
+    </div>
+    <div class="gameover" style="display: none;">
+      <p class="title over-title">Game Over</p>
+      <p class="finish" style="display: none;">🎉Congratulations! You found all the matching cards!🎉✨</p>
+      <p>Your Score: <span class="gameover-result"></span></p>
+      <button class="restart">Restart</button>
     </div>
   </div>
 </body>

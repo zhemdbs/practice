@@ -50,15 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  const popup = document.querySelector('.popup');
+  const gameStartBox = document.querySelector('.gamestart');
+  const gameOverBox = document.querySelector('.gameover');
+  const gameOverResult = document.querySelector('.gameover-result');
+  const startBtn = document.querySelector('.start');
+  const restartBtn = document.querySelector('.restart');
+  const timer = document.querySelector('.timer');
+  const timerText = document.querySelector('.timer-text');
   const grid = document.querySelector('.grid');
   const result = document.querySelector('.result');
+
+  let time = 10;
   let flippedCards = [];
   let matchedCards = []
+  let timerInterval;
   let firstCardImg, secondCardImg;
+  
+  let gameOver = false;
 
+  startBtn.addEventListener('click', startGame)
 
   // 카드 컨테이너 생성
   function createCardContainer() {
+    grid.innerHTML = ''; //grid 초기화
     const shuffledCards = cardArray.sort(() => Math.random() - 0.5);
 
     for(let i = 0; i < shuffledCards.length; i++) {
@@ -84,6 +99,49 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('click', flipCard);
       grid.appendChild(card);
     }
+  }
+
+  function startGame() {
+    // 이전 타이머가 존재한다면 강제로 종료
+    // console.log(timerInterval, gameOver)
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null; // 타이머 상태 초기화
+    }
+    
+    result.textContent = '0'
+    popup.style.display = 'none';
+    gameStartBox.style.display = 'none';
+    matchedCards = [];
+    
+    time = 10;
+    timerText.textContent = time;
+    gameOver = false;
+    
+    const cardItem = document.querySelectorAll('.card');
+
+    cardItem.forEach(item => {
+      item.classList.add('flip');
+    })
+
+    setTimeout(() => {
+      cardItem.forEach(card => {
+        card.classList.remove('flip');
+      });
+
+      timerInterval = setInterval(() => {
+        if (time < 0) {
+          clearInterval(timerInterval); //타이머 종료
+          gameOver = true;
+          checkGameOver();
+        } else {
+          timerText.textContent = time;
+          time--;
+        }
+
+        // console.log(timerText.textContent)
+      }, 1000);
+    }, 2000)
   }
 
   // 카드 뒤집기
@@ -128,10 +186,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 게임 종료
   function checkGameOver() {
+    const finish = document.querySelector('.finish');
+    const overTitle = document.querySelector('.over-title');
+
     if (matchedCards.length === cardArray.length/2) {
-      const title = document.querySelector('h3');
-      title.textContent = '🎉Congratulations! You found all the matching cards!🎉✨';
+      finish.style.display = 'block';
+      overTitle.style.display = 'none';
+      
+      clearInterval(timerInterval); 
+      gameOver = true;
+      setTimeout(()=>{reStart()}, 1000)
     }
+    
+    if(time < 0) {
+      overTitle.style.display = 'block';
+      finish.style.display = 'none';
+      gameOver = true;
+      reStart();
+    }
+  }
+
+  function reStart() {
+    gameOverResult.textContent = matchedCards.length;
+    popup.style.display = 'block';
+    gameOverBox.style.display = 'flex';
+
+    restartBtn.removeEventListener('click', handleRestart);
+    restartBtn.addEventListener('click', handleRestart);
+  }
+
+  function handleRestart() {
+    popup.style.display = 'none';
+    gameOverBox.style.display = 'none';
+
+    flippedCards = []; // 클릭된 카드들 초기화
+    createCardContainer();
+    startGame();
   }
 
   createCardContainer();

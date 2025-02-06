@@ -1,10 +1,90 @@
 body {
+  position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
 }
-h3 {
-  text-align: center;
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.popup .dimmed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+.popup .gamestart,
+.popup .gameover {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.popup .gamestart .title,
+.popup .gameover .title {
+  font-weight: bold;
+  font-size: 35px;
+}
+.popup .gamestart p,
+.popup .gameover p {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+.popup .gamestart button,
+.popup .gameover button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.point-box {
+  display: flex;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.point-box .timer {
+  position: relative;
+  width: 330px;
+  height: 20px;
+  margin-bottom: 15px;
+  background-color: #ffffffd2;
+  border-radius: 15px;
+  user-select: none;
+}
+.point-box .timer .bar {
+  width: 330px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: rgb(255, 175, 25);
+}
+.point-box .timer .timer-text {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  transform: translateY(-50%);
+}
+.point-box .point-text {
+  font-weight: bold;
+  font-size: 25px;
+  user-select: none;
 }
 .game-box {
   display: flex;
@@ -46,6 +126,12 @@ h3 {
 }
 .card.flip .card-view.back {
   transform: rotateY(0deg);
+}
+.finish {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
 }
 canvas {
   position: fixed;
