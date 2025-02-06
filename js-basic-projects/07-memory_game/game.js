@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('.start');
   const restartBtn = document.querySelector('.restart');
   const timer = document.querySelector('.timer');
+  const timerBar = document.querySelector('.bar');
   const timerText = document.querySelector('.timer-text');
   const grid = document.querySelector('.grid');
   const result = document.querySelector('.result');
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let gameOver = false;
 
   startBtn.addEventListener('click', startGame)
+  timerBar.style.transition = 'width 1s linear';
 
   // 카드 컨테이너 생성
   function createCardContainer() {
@@ -119,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gameOver = false;
     
     const cardItem = document.querySelectorAll('.card');
+    timerBar.style.transition = 'none';
+    timerBar.style.width = '100%'
 
     cardItem.forEach(item => {
       item.classList.add('flip');
@@ -130,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       timerInterval = setInterval(() => {
+        timerBar.style.transition = 'width 1s linear';
         if (time < 0) {
           clearInterval(timerInterval); //타이머 종료
           gameOver = true;
@@ -137,6 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           timerText.textContent = time;
           time--;
+
+          const progress = (time / 10) * 100; //(남은시간/전체시간)*100
+          timerBar.style.width = `${progress}%`
         }
 
         // console.log(timerText.textContent)
