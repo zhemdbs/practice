@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 카드 뒤집기
   function flipCard(e) {
     const targetCard = e.target;
-    if (targetCard.classList.contains('flip')) return;
+    if (targetCard.classList.contains('flip') || flippedCards.length === 2) return;
     
     targetCard.classList.add('flip');
     flippedCards.push(targetCard);
@@ -102,9 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (flippedCards.length === 2) {
       secondCardImg = cardName;
-      setTimeout(checkMatch, 500);
+      setTimeout(checkMatch, 400);
     }
-
   }
 
   //뒤집은 카드 비교
@@ -118,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-      }, 50);
+      }, 40);
     }
 
     flippedCards = []; // 클릭된 카드들 초기화
