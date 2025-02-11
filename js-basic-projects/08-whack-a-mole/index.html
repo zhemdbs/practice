@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack a mole</title>
+  <link rel="stylesheet" href="/js-basic-projects/reset.css"></link>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+KR:wght@100..900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto +Sans+KR:wght@100..900&family=Press+Start+2P&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <div class="game__box">
+    <h1 class="game__title">Whack a mole</h1>
+    <div class="grid">
+      <div class="hole" id="hole-1">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-2">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-3">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-4">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-5">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-6">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-7">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-8">
+        <div class="mole"></div>
+      </div>
+      <div class="hole" id="hole-9">
+        <div class="mole"></div>
+      </div>
+    </div>
+    <div class="point__box">
+      <div id="point"><p class="point__text">point : <span class="point__num"></span></p></div>
+      <button type="button" class="btn btn-start">Start</button>
+    </div>
+    <div class="popup">
+      <p id="game-over">Game Over! <span>Your point:<em class="result-point">0</em></span></p>
+      <button type="button" class="btn btn-restart">Restart</button>
+    </div>
+    <!-- <div id="sound-on">
+      <button onclick="toggleSound()">Sound ON/OFF</button>
+    </div> -->
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
