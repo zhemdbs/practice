@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+  
   const holes = document.querySelectorAll('.hole');
   const startBtn = document.querySelector('.btn-start');
   const moles = document.querySelectorAll('.mole');
@@ -12,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let moleTimer;
   let activeMoleIndex = -1;
   let gameOver = false;
+
+    // 모바일 여부 확인
+    const isMobileDevice = isMobile();
 
   point.innerHTML = pointNum;
   startBtn.addEventListener('click', () => {startGame();});
@@ -71,8 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
     point.innerHTML = pointNum;
 
     currentMole.classList.add('bounce');
-    if ("vibrate" in navigator) {
+    if (navigator.vibrate) {
+      // 첫 터치에서만 진동이 발생하도록
       navigator.vibrate(500); // 진동 시간 500ms
+    } else {
+      alert('진동 지원하지 않는 기종')
     }
 
     setTimeout(() => {
@@ -81,12 +89,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   moles.forEach(mole => {
-    mole.addEventListener('click', (e) => {
-      punchMole(e);
-    });
-    mole.addEventListener('touchstart', (e) => {
-      punchMole(e);
-    });
+    if (isMobileDevice) {
+      mole.addEventListener('click', (e) => {
+        punchMole(e);
+      });
+    } else {
+      mole.addEventListener('touchstart', (e) => {
+        punchMole(e);
+      });
+    }
   })
 
+  // 모바일 여부를 확인하는 함수
+  function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  }
 });
