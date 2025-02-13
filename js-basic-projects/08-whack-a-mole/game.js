@@ -64,12 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function punchMole(e) {
+    console.log('e', e)
     const currentMole = e.target;
 
     pointNum++; //점수 증가
     point.innerHTML = pointNum;
 
     currentMole.classList.add('bounce');
+    if ("vibrate" in navigator) {
+      navigator.vibrate(500); // 진동 시간 500ms
+    }
 
     setTimeout(() => {
       currentMole.classList.remove('bounce');
