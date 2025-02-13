@@ -84,5 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     mole.addEventListener('click', (e) => {
       punchMole(e);
     });
+    mole.addEventListener('touchstart', (e) => {
+      punchMole(e);
+    });
   })
+
 });
