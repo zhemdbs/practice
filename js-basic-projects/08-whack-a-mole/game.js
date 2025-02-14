@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-  
   const holes = document.querySelectorAll('.hole');
   const startBtn = document.querySelector('.btn-start');
   const moles = document.querySelectorAll('.mole');
@@ -69,19 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function punchMole(e) {
-    console.log('e', e)
+    // console.log('e', e)
     const currentMole = e.target;
 
     pointNum++; //점수 증가
     point.innerHTML = pointNum;
 
     currentMole.classList.add('bounce');
-    if (navigator.vibrate) {
-      // 첫 터치에서만 진동이 발생하도록
-      navigator.vibrate(500); // 진동 시간 500ms
-    } else {
-      alert('진동 지원하지 않는 기종')
-    }
 
     setTimeout(() => {
       currentMole.classList.remove('bounce');
@@ -90,11 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   moles.forEach(mole => {
     if (isMobileDevice) {
-      mole.addEventListener('click', (e) => {
+      mole.addEventListener('touchstart', (e) => {
         punchMole(e);
       });
     } else {
-      mole.addEventListener('touchstart', (e) => {
+      mole.addEventListener('click', (e) => {
         punchMole(e);
       });
     }
